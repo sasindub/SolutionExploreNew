@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solution Explore | Admin | Log Data</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar shadow">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">
+        <img src="../img/lgb.png" style="height:45px;" class="img" alt="">
+      </span>
+      
+    
+      
+      <div style="float:right;">
+        Dashboard/ Log Data
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    
+
+    <h2 class="text-dark ">Log Data</h2>
+    <div>
+     
+        <span ><a href="adminDashboard.html">Dashboard</a> > Log data</span>
+      </div>
+      <div class="text-right mb-3">
+
+        Start Date:
+        <button class="btn" >    
+      <input type="date" name="start_date" id="startDate" class="rounded-0 form-control" required>
+        </button>
+  
+        
+        End Date:
+        <button class="btn" >    
+      <input type="date" name="end_date" id="endDate" class="rounded-0 form-control" required>
+        </button>
+  
+        <button id="filterBtn" class="btn btn-secondary rounded-0">
+          <i class="fas fa-sync-alt"></i>
+      </button>
+  
+        <button id="downloadReport" class="btn btn-secondary rounded-0" onclick="f()">
+          <i class="fas fa-download"></i> Download
+        </button>
+    </div>
+  
+    
+
+    <div id="downloadDiv">
+    <table class="table rounded-0" style="table-layout: fixed; border-collapse: collapse; border-spacing: 0;">
+    <thead class="" style="">
+        <tr style="background-color: #f2f2f2;">
+            <th scope="col" style="width: 15%;  margin: 0;">Date</th>
+            <th scope="col" style="width: 15%;  margin: 0;">Time</th>
+            <th scope="col" style="width: 15%;  margin: 0;">Name</th>
+            <th scope="col" style="width: 15%;  margin: 0;">Course</th>
+            <th scope="col" style="width: 15%;  margin: 0;">Username</th>
+            <th scope="col" style="width: 15%;  margin: 0;">Status</th>
+        </tr>
+    </thead>
+    <tbody id="tblData" style="font-size: 10pt;">
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+    
+    </div>
+    
+
+  </div>
+
+  
+
+
+
+
+
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<!-- Include the html2pdf library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+  
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/datepicker/moment.min.js"></script>
+<script src="vendor/datepicker/daterangepicker.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <script src="../js/log1.js"></script>
+
+
+</body>
+</html>

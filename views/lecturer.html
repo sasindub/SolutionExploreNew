@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solution Explore | Admin | Lecturers</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar shadow">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">
+        <img src="../img/lgb.png" style="height:45px;" class="img" alt="">
+      </span>
+      
+    
+      
+      <div style="float:right;">
+        Dashboard/ Lecturers 
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    
+
+    <h2 class="text-dark ">Lecturers Details</h2>
+    <div>
+     
+        <span ><a href="adminDashboard.html">Dashboard</a> > Lecturers</span>
+      </div>
+
+    <div class="text-right mb-3">
+
+        Course:
+        <button class="btn">    
+            <select class="form-select form-control rounded-0" id="category" name="category">
+                <option value="all">Select the course</option>
+                <option value="itcs">ITCS</option>
+                                 <option value="hr">HR</option>
+                                 <option value="business">Business</option>
+                                 <option value="psychology">Psychology</option>
+                                 <option value="marketing">Marketing</option>
+                                 <option value="finance">Finance</option>
+                                 <option value="env_science">Environmental Science</option>
+         </select>
+        </button>
+
+      Start Date:
+      <button class="btn" >    
+    <input type="date" name="start_date" id="startDate" class="rounded-0 form-control" required>
+      </button>
+
+      
+      End Date:
+      <button class="btn" >    
+    <input type="date" name="end_date" id="endDate" class="rounded-0 form-control" required>
+      </button>
+
+      <button id="filterBtn" class="btn btn-secondary rounded-0">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+
+      <button id="downloadReportLec" class="btn btn-secondary rounded-0" download>
+        <i class="fas fa-download"></i> Download
+      </button>
+
+      <a href="lecturerRegistration.html" class="btn btn-dark rounded-0">
+        <i class="fas fa-plus"></i> Add New
+      </a>
+
+    </div>
+  
+    
+
+    <div id="downloadDiv">
+        <table class="table table-bordered rounded-0">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Lec_code</th>
+                <th scope="col">Added_date</th>
+                <th scope="col">Updated_date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="tblData">
+             
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+    </div>
+    
+
+  </div>
+
+  <!-- model -->
+  <div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Do you want to delete this lecturer?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>This lecturer will be permanently deleted from the system.</p>
+          <input type="hidden" id="lecId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="deleteBtn" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<!-- Include the html2pdf library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+  
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/datepicker/moment.min.js"></script>
+<script src="vendor/datepicker/daterangepicker.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script src="../js/lecturer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <script src="../js/lecturer11.js"></script>
+
+  <script>//filter
+
+$('#downloadReportLec').click(function () {
+    
+    var pdfName = "LecturerData_" + $('#startDate').val() + "-" + $('#endDate').val() + "_" + $('#category').val() + ".pdf";
+
+   // Get the content of #downloadDiv
+var downloadContent = document.getElementById('downloadDiv').innerHTML;
+
+// Get the start date, end date, and course name
+var startDate = $('#startDate').val();
+var endDate = $('#endDate').val();
+var courseName = $('#category').val();
+
+// Add the headline with dates and course name to the content
+var headline = '<h1 style="text-align: center;">Lecturers Data</h1>' +
+    '<p style="text-align: center;">Start Date: ' + startDate + ' | End Date: ' + endDate + ' | Course: ' + courseName + '</p>';
+downloadContent = headline + downloadContent;
+
+// Use html2pdf to save the PDF
+html2pdf(downloadContent, {
+    filename: pdfName,
+    margin: 10,
+    jsPDF: {
+        unit: 'mm',
+        format: 'a3',
+        orientation: 'portrait'
+    }
+}).then(function (pdf) {
+    // Open the PDF in a new window/tab
+    var blob = pdf.output('blob');
+    var url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+});
+});
+
+    $('#filterBtn').on('click', function() {
+      // Get values
+      var course = $('#category').val();
+      var startDate = $('#startDate').val();
+      var endDate = $('#endDate').val();
+    
+      $.ajax({
+          url: '../repository/lecturerRepository.php',
+          type: 'GET',
+          data: {
+              type: 'filter',
+              course: course,
+              start_date: startDate,
+              end_date: endDate
+          },
+          success: function(data) {
+            try {
+                // Parse the JSON string into a JavaScript object
+                var jsonData = JSON.parse(data);
+   
+                // Now, jsonData is an array of objects, and you can use forEach as before
+                if(data == '[]'){
+                    alert("There is not data available!");
+                }
+                var rowHtml = '';
+                jsonData.forEach(function (lecturer, index) {
+                    
+        
+                    // Check if pimg is 'null' and set the appropriate image path
+                    var profileImagePath = lecturer.pimg === 'null' ? '../img/pro.jpg' : '../img/' + lecturer.pimg;
+        
+                    rowHtml += '<tr>' +
+                        '<th scope="row">' + (index + 1) + '</th>' +
+                        '<td>' +
+                        '<img src="' + profileImagePath + '" alt="Profile Pic" class="rounded-circle border" style="width: 30px; height: 30px; border: 2px solid #000; border-radius: 50%;">' +
+                        '</td>' +
+                        '<td>' + lecturer.name + '</td>' +
+                        '<td>' + lecturer.course + '</td>' +
+                        '<td>' + lecturer.lec_code + '</td>' +
+                        '<td>' + lecturer.added_date + ' ' + lecturer.added_time + '</td>' +
+                        '<td>' + lecturer.updated_date + ' ' + lecturer.updated_time + '</td>' +
+                        '<td>' +
+                        '<button class="btn btn-success btn-sm rounded-0" style="margin-right:5px;">Edit <i class="fas fa-edit"></i></button>' +
+                        '<button class="btn btn-danger btn-sm rounded-0">Delete <i class="fas fa-trash"></i></button>' +
+                        '</td>' +
+                        '</tr>';
+                });
+        
+                $('#tblData').html(rowHtml);
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+            }
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+  });</script>
+</body>
+</html>

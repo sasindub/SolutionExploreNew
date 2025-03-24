@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Explore | Admin Dashboard</title>
+    <link rel="icon" type="image/png" href="img/Logo.png">
+      <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="../css/css/admin1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .hd{
+  color:white; font-weight:700;
+}
+
+.hdcount{
+  font-size:24pt; font-weight:800;
+  opacity: 0.3;
+  
+}
+</style>
+
+<body>
+            <nav class="navbar shadow">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1">
+
+                <img src="../img/lgb.png" style="height:45px; " class="img" alt="">
+                
+                </span>
+
+                <span id="adminDashboard" style="color: black; font-size: 13pt; font-weight: 500;"></span>
+
+                <div style="float:right;">
+                    <a href="adminLogin.html" class="btn btn-outline-dark rounded-0">LOG OUT <i class="fa fa-sign-out" aria-hidden="true"></i> </a>    
+                </div>
+            </div>
+            </nav>
+
+            
+
+
+            <!-- admin cards start -->
+
+            <div class="container mt-5">
+  
+<div class="row">
+
+    <!-- lecturer -->
+<div class="col-md-3">
+    <a class="datcard my-3" href="lecturer.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Lecturers</span><br>
+       <span class="hdcount" id="lectCount"></span><br>
+
+
+      
+
+       <div style="float:right; font-size: 14pt; ">
+        <span>Active - <b>4</b></span><br>
+        
+       </div>
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+   <!-- student -->
+  <div class="col-md-3">
+    <a class="datcard my-3" href="student.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Students</span><br>
+       <span class="hdcount" id="stuCount"></span><br>
+
+
+      
+
+       <div style="float:right; font-size: 14pt; ">
+        <span>Active - <b>4</b></span><br>
+        
+       </div>
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+ <!-- posts -->
+  <div class="col-md-3">
+    <a class="datcard my-3" href="post.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Posts</span><br>
+       <span class="hdcount">5</span><br>
+   
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+ <!-- post for approval -->
+  <div class="col-md-3">
+    <a class="datcard my-3" href="postForApproval.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Posts for Approval</span><br>
+       <span class="hdcount">5</span><br>
+
+
+      
+
+       <div style="float:right; font-size: 14pt; ">
+        <span>Active - <b>4</b></span><br>
+        
+       </div>
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+ <!-- rejected post -->
+  <div class="col-md-4">
+    <a class="datcard my-3" href="postRejected.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Rejected posts</span><br>
+       <span class="hdcount">5</span><br>
+
+
+      
+
+    
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+   <!-- logs -->
+  <div class="col-md-4">
+    <a class="datcard my-3" href="log.html">
+      <span style="color:white; font-weight:700;" class="h4 hd">Logs</span><br>
+       <span class="hdcount">5</span><br>
+
+
+      
+
+       <div style="float:right; font-size: 14pt; ">
+        <span>Active - <b>4</b></span><br>
+        
+       </div>
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+   <!-- reviews -->
+
+  <div class="col-md-4">
+    <a class="datcard my-3" href="#">
+      <span style="color:white; font-weight:700;" class="h4 hd">Reviews</span><br>
+       <span class="hdcount">5</span><br>
+
+
+      
+
+       <div style="float:right; font-size: 14pt; ">
+        <span>New - <b>4</b></span><br>
+        
+       </div>
+
+      <div class="go-corner">
+      </div>
+    </a>
+  </div>
+
+
+ 
+
+  
+</div>
+</div>
+
+
+<footer style="position: fixed; bottom: 0; width: 100%; margin-top: 150pt;">
+    <div class="text-center text-dark p-3 mt-5" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Solution Explore. All Rights Reserved.
+      <p>
+        <i class="fab fa-google me-1"></i>
+        <i class='fab fa-whatsapp-square ms-2 me-1' style='font-size:20px'></i><a class="text-dark col-4"  href="https://wa.me/qr/7EXBEZI25XZZM1"></a>
+        <i class="fab fa-twitter me-1 ms-2"></i><a class="text-dark col-4"  href="https://twitter.com/Sasindubandara6"></a>
+      </p>
+    </div>
+  </footer>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</body>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var adminDashboard = document.getElementById('adminDashboard');
+      var textToWrite = "Welcome Back! Admin Dashboard";
+      var speed = 100; // Adjust the speed of typing (milliseconds per character)
+  
+      // Function to update the content of the element
+      function typeWriter() {
+        var index = 0;
+  
+        function writeText() {
+          adminDashboard.textContent += textToWrite[index];
+          index++;
+  
+          if (index < textToWrite.length) {
+            setTimeout(writeText, speed);
+          }
+        }
+  
+        // Call the writeText function after a short delay
+        setTimeout(writeText, 500);
+      }
+  
+      // Call the typeWriter function immediately after the page loads
+      typeWriter();
+    });
+  </script>
+  
+  <!-- //get count -->
+  <script>
+
+//lect
+                $.ajax({
+                    url: "../repository/lecturerRepository.php",
+                    type: "GET",
+                    data: { type: 'count'},
+                    success: function(data){
+                      if(data < 10){
+                        data = "0"+data ;
+                      }
+
+                      $("#lectCount").html(data);
+                        
+                    }
+                });
+
+                //student
+                $.ajax({
+                    url: "../repository/studentRepository.php",
+                    type: "GET",
+                    data: { type: 'count'},
+                    success: function(data){
+                      if(data < 10){
+                        data = "0"+data ;
+                      }
+
+                      $("#stuCount").html(data);
+                        
+                    }
+                });
+
+  </script>
+  
+  
+
+</html>

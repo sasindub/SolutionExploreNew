@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Explore | Profile</title>
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<style>
+  html {
+            scroll-behavior: smooth;
+        }
+.hl{
+  font-size: 15pt; 
+  color: white; 
+  text-decoration: none;
+
+
+}
+.fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+.hl:hover{
+  color: rgb(222, 222, 222);
+  text-decoration: none;
+  cursor: pointer;
+}
+#eraseWriteEffect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid rgba(0, 0, 0, 0.496);
+            font-size: 14pt;
+            margin-bottom: 25px;
+            animation: eraseWriteAnimation 4s infinite;
+        }
+
+        @keyframes eraseWriteAnimation {
+            0% {
+                width: 0;
+            }
+            50% {
+                border-color: transparent;
+            }
+            100% {
+                width: 100%;
+                border-color: rgba(0, 0, 0, 0.496);
+            }
+        }
+</style>
+</head>
+
+<body>
+    <main >
+       
+        <header>
+            
+          <div class="tb container">
+            <div class="td" id="logo">
+              <a href="#"><img src="../img/lgw.png" style="width: 150px;"></a>
+            </div>
+            <div class="td" id="i-links">
+              <div class="tb">
+                <div class="td" id="m-td">
+                  
+                  <!-- notification area -->
+                  <div class="dropdown" style="float:right;">
+                    <button class="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa-solid fa-bell" style="font-size: 15pt; color:white;"></i>
+                      <span class="badge badge-danger">4</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">Action</button>
+                      <button class="dropdown-item" type="button">Another action</button>
+                      <button class="dropdown-item" type="button">Something else here</button>
+                    </div>
+                  </div>
+
+                <a class="btn btn-light btn-sm" style="float:right; margin-right: 6px;"> Problems</a>
+                <button id="btnAddNew" class="btn btn-outline-light btn-sm" style="float:right; margin-right: 6px;"> Add new</button>
+
+                <input id="search" class="btn btn-outline-light btn-sm" style="width: 350px;" placeholder="Search...">
+
+                <button id="btnSearch" class="btn btn-light btn-sm" style="font-size: 10pt;"><i style="font-size: 12pt; color: black;" class="fas fa-search fa-sm"></i></button>
+               
+                </div>
+                <div class="td">
+                  <a href="#" id="p-link">
+                    
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+      
+
+        <div id="main-content" >
+          <div class="tb" style="margin-top: 70px;">
+            <div class="td" id="l-col" style="position: fixed;">
+
+              <div class="l-cnt" >
+                <div class="cnt-label">
+                  <i class="l-i" id="l-i-i"></i>
+                  <span>About</span>
+                  <div class="lb-action"></div>
+                </div>
+                <div id="i-box">
+                  <div id="intro-line"></div>
+                </div>
+              </div>
+             
+
+              <div class="l-cnt l-mrg" style="height: 340px; overflow-y: auto;">
+                <div class="cnt-label">
+                  <i class="l-i" id="l-i-k"></i>
+                  <span>Saved Quizes<i id="k-nm"></i></span>
+                </div>
+                <div id="q">
+                  
+                 
+                </div>
+              </div>
+              
+            </div>
+
+
+            <div class="td" id="m-col" >
+              <!-- new post -->
+              
+             
+              <div style="margin-left: 300px; margin-right:0px;">
+
+                <!-- post -->
+                <div id="p"></div>
+<!-- post end -->
+             
+
+              </div>
+             
+            </div>
+            
+            <div class="td" id="r-col">
+              <div id="chat-bar" ></div>
+                <div id="cts" style="margin-right: 0px; position: fixed;">
+                  <div class="on-ct active" >
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </main>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iK6UdoA6eCAzn6M/xH2LOxj5G6I5mi1aRZJwMKK7L/bce5S/KbQOp6j9B" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="../js/wall80.js"></script>
+<script>
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+          }
+      });
+  });
+
+
+  const elementsToAnimate = document.querySelectorAll('.fade-in');
+  elementsToAnimate.forEach(element => {
+      observer.observe(element);
+  });
+</script>
+<script>
+  const textArray = ["POST NEW PROBLEM", "SOLVE YOUR PROBLEM", "ENGAGE WITH EXPERTISE"]; 
+  let index = 0;
+
+  function updateText() {
+      const eraseWriteElement = document.getElementById('eraseWriteEffect');
+      eraseWriteElement.textContent = textArray[index];
+      index = (index + 1) % textArray.length;
+  }
+
+
+  updateText();
+
+  setInterval(updateText, 4000); 
+</script>
+
+
+<script>
+  // Array of placeholder texts
+  var placeholders = [
+  "Search...",
+    "Search for your problem...",
+  "Discover solutions to your challenges.",
+"Navigate through the sea of knowledge.",
+"Find answers within the community.",
+"Embark on a journey of learning.",
+"Seek wisdom, solve puzzles.",
+"Uncover the secrets of success.",
+"Ask questions, embrace wisdom.",
+"Empower yourself with knowledge.",
+"Illuminate your path with answers.",
+    "I have a problem with.....",
+  ];
+
+  // Function to animate placeholder change
+  function animatePlaceholder(index, charIndex) {
+    var currentPlaceholder = placeholders[index];
+    var displayedText = currentPlaceholder.substring(0, charIndex);
+
+    document.getElementById("search").placeholder = displayedText;
+
+    if (charIndex < currentPlaceholder.length) {
+      charIndex++;
+      setTimeout(function () {
+        animatePlaceholder(index, charIndex);
+      }, 50); // Adjust the speed of animation if needed
+    } else {
+      // Move to the next placeholder after displaying the complete text
+      index = (index + 1) % placeholders.length;
+      setTimeout(function () {
+        animatePlaceholder(index, 0);
+      }, 2000); // Set a delay before starting the animation for the next placeholder
+    }
+  }
+
+  // Start the animation
+  animatePlaceholder(0, 0);
+</script>
+</html>

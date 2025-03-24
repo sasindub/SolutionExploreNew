@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Explore | Profile</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<style>
+  html {
+            scroll-behavior: smooth;
+        }
+.hl{
+  font-size: 15pt; 
+  color: white; 
+  text-decoration: none;
+
+
+}
+.fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+.hl:hover{
+  color: rgb(222, 222, 222);
+  text-decoration: none;
+  cursor: pointer;
+}
+#eraseWriteEffect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid rgba(0, 0, 0, 0.496);
+            font-size: 14pt;
+            margin-bottom: 25px;
+            animation: eraseWriteAnimation 4s infinite;
+        }
+
+        @keyframes eraseWriteAnimation {
+            0% {
+                width: 0;
+            }
+            50% {
+                border-color: transparent;
+            }
+            100% {
+                width: 100%;
+                border-color: rgba(0, 0, 0, 0.496);
+            }
+        }
+</style>
+</head>
+
+<body>
+    <main >
+       
+        <header>
+            
+          <div class="tb container">
+            <div class="td" id="logo">
+              <a href="#"><img src="img/lgw.png" style="width: 150px;"></a>
+            </div>
+            
+            <div class="td" id="i-links">
+              <div class="tb">
+                <div class="td" id="m-td">
+                  
+                  <!-- notification area -->
+                  <div class="dropdown" style="float:right;">
+                    <button class="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa-solid fa-bell" style="font-size: 15pt; color:white;"></i>
+                      <span class="badge badge-danger">4</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">Action</button>
+                      <button class="dropdown-item" type="button">Another action</button>
+                      <button class="dropdown-item" type="button">Something else here</button>
+                    </div>
+                  </div>
+
+                <button  id="pbtn" class="btn btn-outline-light btn-sm" style="float:right; margin-right: 6px;"> Problems</button>
+                <a href="#composer" class="btn btn-light btn-sm" style="float:right; margin-right: 6px;"> Add new</a>
+               
+                </div>
+
+                <div>
+                  <button id="logoutbtn">
+                    <i style="font-size: 15pt;" class="fa fa-sign-out" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+                <div class="td">
+                  <a href="#" id="p-link">
+                   
+                  </a>
+                </div>
+
+                
+                
+              </div>
+            </div>
+          </div>
+        </header>
+        <div id="profile-upper" class="fade-in" id="content-to-animate">
+          <div id="profile-banner-image">
+            
+          </div>
+          <div id="profile-d">
+            <div id="profile-pic">
+              
+            </div>
+            <div id="u-name"></div>
+            <div class="tb" id="m-btns">
+             
+            </div>
+            
+          </div>
+          <div id="black-grd"></div>
+        </div>
+
+        <div id="main-content" >
+          <div class="tb">
+            <div class="td" id="l-col" >
+              <div class="l-cnt">
+                <div class="cnt-label">
+                  <i class="l-i" id="l-i-i"></i>
+                  <span>About</span>
+                  <div class="lb-action"><a class="btn btn-sm btn-secondary">edit</a></div>
+                </div>
+                <div id="i-box">
+                  <div id="intro-line"></div>
+                  <div id="u-occ">Add something about yourself..</div>
+                </div>
+              </div>
+             
+
+              <div class="l-cnt l-mrg" style="height: 410px; overflow-y: auto;">
+                <div class="cnt-label">
+                  <i class="l-i" id="l-i-k"></i>
+                  <span>Saved Quizes<i id="k-nm"></i></span>
+                </div>
+                <div id="q">
+                  <div class="q-ad-c">
+                    <a href="#" class="q-ad">
+                      <img src="https://imagizer.imageshack.com/img923/1849/4TnLy1.png">
+                    </a>
+                  </div>
+                 
+                </div>
+              </div>
+              
+            </div>
+
+
+            <div class="td" id="m-col">
+              <!-- new post -->
+           
+              <div class="m-mrg" id="composer">
+                <div id="postArea">
+                <div id="c-tabs-cvr">
+                  <div >
+                    <h1 style="color: rgba(0, 0, 0, 0.496); font-size: 14pt; margin-bottom: 25px;" id="eraseWriteEffect">POST NEW PROBLEM</h1>
+                    <hr>
+                    
+                    <div class="input-group mb-3 mt-4">
+                      <input type="text" id="title" class="form-control" placeholder="Type the problem title" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="mb-3">
+                      <input class="form-control form-control" id="formFile" type="file">
+                    </div>
+
+                  </div>
+                </div>
+
+                <div id="c-c-main">
+                  <div class="tb">
+                    <div class="td" id="p-c-i"></div>
+                    <div class="td" id="c-inp">
+                     
+                      <textarea type="text" id="prob" name="prob" placeholder="What's your problem?"></textarea>
+                    </div>
+                  </div>
+                  <div id="insert_emoji"><button class="btn btn-primary" id="btnPost">Post<button></div>
+                </div>
+              </div>
+
+
+              </div>
+              <div>
+
+                <!-- post -->
+                <div id="p"></div>
+                  
+
+                  
+                
+
+<!-- post end -->
+              
+
+
+                
+
+
+                  
+
+
+
+
+                  
+
+              </div>
+             
+            </div>
+            
+            <div class="td" id="r-col" >
+              <div id="chat-bar" ></div>
+                <div id="cts" style="margin-right: 15px;">
+                  <div class="on-ct active" >
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                  <div class="on-ct active">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+                  </div>
+                  <div class="on-ct">
+                    <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </main>
+
+
+      <!-- model -->
+   <div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Do you want to logout?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>You are going to logout from the system.</p>
+          <input type="hidden" id="lecId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="yesBtn" class="btn btn-outline-dark">Yes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="js/index733.js"></script>
+<script>
+  
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+          }
+      });
+  });
+
+
+  const elementsToAnimate = document.querySelectorAll('.fade-in');
+  elementsToAnimate.forEach(element => {
+      observer.observe(element);
+  });
+</script>
+<script>
+  const textArray = ["POST NEW PROBLEM", "SOLVE YOUR PROBLEM", "ENGAGE WITH EXPERTISE"]; 
+  let index = 0;
+
+  function updateText() {
+      const eraseWriteElement = document.getElementById('eraseWriteEffect');
+      eraseWriteElement.textContent = textArray[index];
+      index = (index + 1) % textArray.length;
+  }
+
+
+  updateText();
+
+  setInterval(updateText, 4000); 
+</script>
+</html>
+
+
